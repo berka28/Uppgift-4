@@ -67,6 +67,8 @@ namespace UWP
                 if (payload == null)
                     continue;
 
+                lvTempHum.Items.Add(Encoding.UTF8.GetString(payload.GetBytes()))
+;
                 await deviceClient.CompleteAsync(payload);
             }
         }
