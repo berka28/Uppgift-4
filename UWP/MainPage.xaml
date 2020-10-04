@@ -9,49 +9,24 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="20">
-        <Grid.Resources>
-            <models:TemperatureModel x:Key="temeperaturemodel" />
-            <models:BodyMessageModel x:Key="bodymessagemodel" />
-        </Grid.Resources>
-
-
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="2*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="2*" />
-            </Grid.ColumnDefinitions>
+        <Button x:Name="btnTempHum" Grid.Row="0" Click="btnTempHum_Click_1" Content="Button" Height="180" Width="600" HorizontalAlignment="Center" />
 
-            <Button x:Name="btnTempHum" Click="btnTempHum_Click" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="PRESS BUTTON" FontSize="24" />
-        </Grid>
-
-        <ListView  Grid.Row="1" Margin="20" HorizontalAlignment="Stretch" >
+        <ListView x:Name="lvTempHum" ItemsSource="{x:Bind}" Grid.Row="1" Margin="20" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Grid.Column="0" Margin="0,10,40,10" >
-                        <TextBlock Text="Temperature" FontSize="24" />
-                        <TextBlock Text="Humidity" FontSize="24" />
-                    </StackPanel>
-
-                </Grid>
-                </DataTemplate>    
-            </ListView.ItemTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding  }" />
+                        <TextBlock Text="{Binding}" />
+                    </StackPanel> 
+                </DataTemplate>
+            </ListView.ItemTemplate> 
         </ListView>
-
+    
     </Grid>
 </Page>
