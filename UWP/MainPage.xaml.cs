@@ -46,7 +46,7 @@ namespace UWP
         private async void btnTempHum_Click_1(object sender, RoutedEventArgs e)
         {
             {
-                await SendMessageAsync("Hej");
+                await DeviceService.SendMessageAsync(deviceClient);
             }
         }
 
