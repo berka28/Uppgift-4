@@ -17,16 +17,7 @@
 
         <Button x:Name="btnTempHum" Grid.Row="0" Click="btnTempHum_Click_1" Content="Button" Height="180" Width="600" HorizontalAlignment="Center" />
 
-        <ListView x:Name="lvTempHum" ItemsSource="{x:Bind}" Grid.Row="1" Margin="20" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding  }" />
-                        <TextBlock Text="{Binding}" />
-                    </StackPanel> 
-                </DataTemplate>
-            </ListView.ItemTemplate> 
-        </ListView>
+        
     
     </Grid>
 </Page>

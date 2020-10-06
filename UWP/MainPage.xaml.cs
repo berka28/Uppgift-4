@@ -32,8 +32,6 @@ namespace UWP
         private DeviceClient deviceClient = 
             DeviceClient.CreateFromConnectionString("HostName=EC-WIN20-MB-IoT-hubb-1.azure-devices.net;DeviceId=ConsoleApp;SharedAccessKey=KhOzfu1bdjGysi3hmNSD+lA7RBVHjjtoaThZ+c0RIyY=", TransportType.Mqtt);
 
-        public Random rnd = new Random();
-        private string payload;
 
         public MainPage()
 
@@ -48,7 +46,7 @@ namespace UWP
         private async void btnTempHum_Click_1(object sender, RoutedEventArgs e)
         {
             {
-                await SendMessageAsync(payload);
+                await SendMessageAsync("Hej");
             }
         }
 
@@ -67,8 +65,6 @@ namespace UWP
                 if (payload == null)
                     continue;
 
-                lvTempHum.Items.Add(Encoding.UTF8.GetString(payload.GetBytes()))
-;
                 await deviceClient.CompleteAsync(payload);
             }
         }
